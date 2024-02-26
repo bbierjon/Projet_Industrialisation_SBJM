@@ -1,0 +1,72 @@
+.footer {
+  background-color: white; /* Couleur de fond du footer */
+  padding: 20px 0; /* Espace intérieur vertical du footer */
+  color: #7F6EE2; /* Couleur du texte général */
+  font-family: 'Votre Police', sans-serif; /* Remplacez par votre police */
+}
+
+.footer-sections {
+  display: flex;
+  justify-content: space-around; /* Répartit équitablement les sections du footer */
+  flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur les petits écrans */
+}
+
+.footer-section h4 {
+  margin-bottom: 10px; /* Espace sous le titre de la section */
+}
+
+.footer-section ul {
+  list-style-type: none; /* Enlève les puces des listes */
+  padding: 0; /* Enlève le padding par défaut */
+}
+
+.footer-section ul li a {
+  text-decoration: none; /* Enlève le soulignement des liens */
+  color: black; /* Couleur des liens */
+}
+
+.social-icons a {
+  display: inline-block; /* Affiche les icônes de médias sociaux côte à côte */
+  margin-right: 10px; /* Espace à droite de chaque icône */
+}
+
+.social-icons img {
+  width: 50px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #7F6EE2;
+  padding-top: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+}
+
+.footer-bottom span {
+  color: #7F6EE2;
+}
+
+.footer-links {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9em;
+}
+
+.footer-links a {
+  color: #7F6EE2;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links span {
+  color: #7F6EE2;
+}

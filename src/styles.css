@@ -1,0 +1,33 @@
+/* Réinitialisation du style pour tous les éléments */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Cette règle inclut le padding et la bordure dans la largeur et la hauteur totales des éléments */
+}
+
+/* Styles spécifiques pour le body */
+body {
+  padding: 0;
+  margin: 0;
+  /* Vous pouvez ajouter ici d'autres styles globaux pour le body */
+}
+
+/* Réinitialisation du style pour les éléments de classe spécifique, si nécessaire */
+.element-class {
+  padding: 0;
+  /* Autres styles spécifiques à .element-class */
+}
+/* Masquer la barre de défilement visuellement pour Chrome, Edge, et Safari */
+::-webkit-scrollbar {
+  display: none; /* La barre de défilement reste fonctionnelle mais n'est pas visible */
+}
+
+/* Masquer la barre de défilement visuellement pour Internet Explorer 10+ */
+body {
+  -ms-overflow-style: none;  /* IE et Edge */
+}
+
+/* Masquer la barre de défilement visuellement pour Firefox */
+body {
+  scrollbar-width: none;  /* Firefox */
+}

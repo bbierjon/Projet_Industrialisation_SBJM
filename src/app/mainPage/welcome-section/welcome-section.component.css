@@ -1,0 +1,62 @@
+.welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+
+  .text-content {
+    flex: 1;
+    padding-right: 2rem;
+    padding-left: 4rem;
+
+    h1 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      background-color: #7F6EE2;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #7F6EE2;
+      }
+    }
+  }
+
+  .image-content {
+    flex: 1;
+    padding-left: 0;
+
+    img {
+      width: 120%;
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-section {
+    flex-direction: column;
+    text-align: center;
+
+    .text-content, .image-content {
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
