@@ -1,0 +1,23 @@
+<div class="appointment-form" *ngIf="!isLoading; else loading">
+  <h2>Prendre un rendez-vous :</h2>
+  <form>
+    <label for="serviceChoice">Choix du service</label>
+    <select id="serviceChoice" name="serviceChoice">
+      <option *ngFor="let service of services" [value]="service.numeroService">{{ service.nomService }}</option>
+    </select>
+
+    <label for="cardNumber">Numéros de carte vitale</label>
+    <input id="cardNumber" type="text" name="cardNumber" placeholder="Entrez votre numéro" />
+
+    <label for="fullName">Nom / prénom</label>
+    <input id="fullName" type="text" name="fullName" placeholder="Entrez votre nom et prénom" />
+
+    <button type="submit">Valider le rendez-vous</button>
+  </form>
+</div>
+
+<ng-template #loading>
+  <p>Chargement...</p>
+</ng-template>
+
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>

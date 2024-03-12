@@ -1,20 +1,29 @@
-import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {ChangeDetectorRef, Component} from '@angular/core';
+import {Router, RouterLink} from "@angular/router";
 import {AuthService} from "../auth-service.service";
+import {CommonModule} from "@angular/common";
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    RouterLink
+    RouterLink,
+    CommonModule
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor(private authService: AuthService) {}
+  constructor(protected authService: AuthService,private cdr: ChangeDetectorRef,private router: Router) {}
 
   setRole(role: string) {
     this.authService.setRole(role);
   }
+
+  logout() {
+    this.authService.logout();
+    this.cdr.detectChanges(); // Force Angular to check for changes
+    this.router.navigate(['/accueil']);
+  }
+
 }

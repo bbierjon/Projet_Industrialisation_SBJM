@@ -13,6 +13,10 @@
           <a (click)="setRole('infirmiere')" routerLink="/connexion-infirmiere" class="dropdown-item">Espace infirmière</a>
           <a (click)="setRole('secretaire')" routerLink="/connexion-secretaire" class="dropdown-item">Espace secrétaire</a>
           <a (click)="setRole('patient')" routerLink="/connexion-patient" class="dropdown-item">Espace client</a>
+
+        </div>
+        <div *ngIf="authService.isAuthenticated()" class="nav-item logout-button">
+          <button (click)="logout()">Déconnexion</button>
         </div>
       </div>
     </div>
