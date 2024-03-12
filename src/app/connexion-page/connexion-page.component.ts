@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from "@angular/router";
 import { FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { AuthService } from "../auth-service.service";
+import { AuthService } from "../services/Authentication/auth-service.service";
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -45,9 +45,9 @@ export class ConnexionPageComponent implements OnInit {
               // Rediriger vers la page appropriée en fonction du rôle
               this.authService.getRole().subscribe((role) => {
                 if (role === 'infirmiere') {
-                  this.router.navigate(['/prise-rendezvous']);
+                  this.router.navigate(['/calendrier']);
                 } else if (role === 'secretaire') {
-                  this.router.navigate(['/secretaire']);
+                  this.router.navigate(['/service']);
                 } else if (role === 'patient') {
                   this.router.navigate(['/prise-rendezvous']);
                 }else

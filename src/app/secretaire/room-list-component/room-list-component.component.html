@@ -1,0 +1,14 @@
+<div class="room-container">
+  <mat-card *ngFor="let room of rooms" class="room-card">
+    <mat-card-header>
+      <mat-card-title>
+        Chambre {{ room.numeroChambre }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Service ID: {{ room.numeroService }}</p>
+      <p>Équipement ID: {{ room.numeroEquipement || 'N/A' }}</p>
+      <!-- Add more room details here -->
+    </mat-card-content>
+  </mat-card>
+</div>

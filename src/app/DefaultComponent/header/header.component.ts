@@ -1,6 +1,6 @@
 import {ChangeDetectorRef, Component} from '@angular/core';
 import {Router, RouterLink} from "@angular/router";
-import {AuthService} from "../auth-service.service";
+import {AuthService} from "../../services/Authentication/auth-service.service";
 import {CommonModule} from "@angular/common";
 
 @Component({

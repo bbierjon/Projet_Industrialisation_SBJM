@@ -1,28 +1,30 @@
 import { ChangeDetectorRef, Component} from '@angular/core';
 import {  NavigationEnd, Router, RouterModule, RouterOutlet, Event as NavigationEvent } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from "./DefaultComponent/header/header.component";
 import { AccueilComponent } from "./mainPage/accueil/accueil.component";
-import { FooterComponent } from "./footer/footer.component";
-import { BreadcrumbComponent } from "./breadcrumb/breadcrumb.component";
+import { FooterComponent } from "./DefaultComponent/footer/footer.component";
+import { BreadcrumbComponent } from "./DefaultComponent/breadcrumb/breadcrumb.component";
 import { filter } from "rxjs/operators";
 import { NgIf}  from "@angular/common";
-import { AuthService } from './auth-service.service';
+import { AuthService } from './services/Authentication/auth-service.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from "./auth.interceptor";
-import { ServiceService } from "./services/service.service";
-import { ServicesComponent } from './ServiceSection/services.component';
+import { ServiceService } from "./services/DataRecuperator/services/service.service";
+import { ServicesComponent } from './secretaire/ServiceSection/services.component';
+import { MatCardModule } from '@angular/material/card';
+import { ChambresService} from "./services/DataRecuperator/chambres/chambres.service";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, RouterOutlet, HeaderComponent, AccueilComponent, FooterComponent, BreadcrumbComponent, NgIf, HttpClientModule, ServicesComponent],
+  imports: [RouterModule, RouterOutlet, HeaderComponent, AccueilComponent, FooterComponent, BreadcrumbComponent, NgIf, HttpClientModule, ServicesComponent, MatCardModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers:[{
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  },AuthService, ServiceService]
+  },AuthService, ServiceService, ChambresService]
 })
 export class AppComponent {
   title = 'Front-Industrialisation';

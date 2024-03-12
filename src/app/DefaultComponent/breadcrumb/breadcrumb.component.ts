@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {NgForOf, NgIf} from "@angular/common";
-import {Breadcrumb, BreadcrumbService} from "../services/breadcrumb.service";
+import {Breadcrumb, BreadcrumbService} from "../../services/breadcrumb/breadcrumb.service";
 @Component({
   selector: 'app-breadcrumb',
   standalone: true,

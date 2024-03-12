@@ -1,0 +1,13 @@
+<div class="services-container">
+  <mat-card *ngFor="let service of services" class="service-card" (click)="onSelectService(service.numeroService)">
+    <mat-card-header>
+      <mat-card-title>
+        <h3>{{ service.nomService }}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <!-- Include other service properties as needed, like mat-card-content -->
+    <mat-card-content>
+      <!-- Content goes here -->
+    </mat-card-content>
+  </mat-card>
+</div>

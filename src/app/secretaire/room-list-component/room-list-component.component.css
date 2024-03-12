@@ -1,0 +1,52 @@
+.room-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
+  gap: 1rem; /* Space between cards */
+  padding: 1rem; /* Padding around the grid */
+  max-width: 1200px; /* Max container width, adjust as needed */
+  margin: auto; /* Center the container */
+}
+
+.room-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content */
+  justify-content: center; /* Center the content vertically */
+  border-radius: 10px; /* Rounded corners */
+  padding: 1.5rem; /* Padding inside the card */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  transition: 0.3s; /* Smooth transition for hover effects */
+}
+
+.mat-card-header {
+  padding: 0; /* Remove padding if any */
+  margin-bottom: 1rem; /* Space below the header */
+}
+
+.mat-card-title {
+  font-size: 1.25rem; /* Larger text for the title */
+  margin: 0; /* Remove margin if any */
+}
+
+.mat-card-content p {
+  margin: 0; /* Remove margin if any */
+  font-size: 1rem; /* Text size */
+}
+
+/* Hover effect */
+.room-card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Larger shadow on hover */
+  transform: translateY(-5px); /* Slightly raise the card */
+}
+
+@media (max-width: 768px) {
+  .room-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards in a row for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .room-container {
+    grid-template-columns: 1fr; /* 1 card per row for very small screens */
+  }
+}
