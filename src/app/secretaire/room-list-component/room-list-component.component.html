@@ -1,5 +1,5 @@
 <div class="room-container">
-  <mat-card *ngFor="let room of rooms" class="room-card">
+  <mat-card *ngFor="let room of rooms" class="room-card" (click)="onSelectedBed(room.numeroChambre)">
     <mat-card-header>
       <mat-card-title>
         Chambre {{ room.numeroChambre }}

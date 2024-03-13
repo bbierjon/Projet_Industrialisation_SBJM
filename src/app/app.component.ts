@@ -13,6 +13,7 @@ import { ServiceService } from "./services/DataRecuperator/services/service.serv
 import { ServicesComponent } from './secretaire/ServiceSection/services.component';
 import { MatCardModule } from '@angular/material/card';
 import { ChambresService} from "./services/DataRecuperator/chambres/chambres.service";
+import {LitsService} from "./services/DataRecuperator/lits/lits.service";
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ import { ChambresService} from "./services/DataRecuperator/chambres/chambres.ser
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  },AuthService, ServiceService, ChambresService]
+  },AuthService, ServiceService, ChambresService, LitsService]
 })
 export class AppComponent {
   title = 'Front-Industrialisation';

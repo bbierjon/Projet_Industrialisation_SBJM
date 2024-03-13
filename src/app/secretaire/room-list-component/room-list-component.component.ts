@@ -1,10 +1,8 @@
-import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Chambre, ChambresService} from "../../services/DataRecuperator/chambres/chambres.service";
 import {MatCardContent, MatCardHeader, MatCardModule} from "@angular/material/card";
 import {CommonModule} from "@angular/common";
 import {ActivatedRoute, Router} from "@angular/router";
-import {BreadcrumbComponent} from "../../DefaultComponent/breadcrumb/breadcrumb.component";
-
 @Component({
   selector: 'app-room-list-component',
   standalone: true,
@@ -13,16 +11,16 @@ import {BreadcrumbComponent} from "../../DefaultComponent/breadcrumb/breadcrumb.
     MatCardModule,
     MatCardHeader,
     MatCardContent,
-    BreadcrumbComponent
   ],
   templateUrl: './room-list-component.component.html',
   styleUrl: './room-list-component.component.css'
 })
 export class RoomListComponentComponent implements OnInit{
   @Input() serviceId: number | null = null;
+  @Output() serviceSelected = new EventEmitter<number>();
   rooms: Chambre[] = [];
 
-  constructor(private chambresService: ChambresService, private route: ActivatedRoute) {}
+  constructor(private chambresService: ChambresService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -41,5 +39,9 @@ export class RoomListComponentComponent implements OnInit{
       error => console.error('Could not load rooms for service', error)
     );
     console.log("Voici ce qui à chargé " + this.rooms)
+  }
+
+  onSelectedBed(chambreId: number): void {
+    this.router.navigate(['/formulaire-ajout-patient', chambreId]);
   }
 }

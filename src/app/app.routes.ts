@@ -4,6 +4,9 @@ import { ConnexionPageComponent } from "./connexion-page/connexion-page.componen
 import {RendezVousComponent} from "./patient/rendez-vous/rendez-vous.component";
 import { ServicesComponent } from './secretaire/ServiceSection/services.component';
 import {RoomListComponentComponent} from "./secretaire/room-list-component/room-list-component.component";
+import {
+  FormulaireAjoutPatientComponent
+} from "./secretaire/formulaire-ajout-patient/formulaire-ajout-patient.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' }, // Redirige vers 'accueil' par défaut
@@ -13,5 +16,6 @@ export const routes: Routes = [
   { path: 'connexion-patient', component: ConnexionPageComponent, data: { breadcrumb: 'Accueil > Espace Patient' } },
   { path: 'prise-rendezvous', component: RendezVousComponent, data: { breadcrumb: 'Accueil > Espace Patient > Prise de rendez-vous' } },
   { path: 'service', component: ServicesComponent, data: { breadcrumb: 'Accueil > Espace secrétaire > Services' } },
-  { path: 'room-list/:serviceId', component: RoomListComponentComponent, data: { breadcrumb: 'Accueil > Espace secrétaire > Services > Chambres' }  }
+  { path: 'room-list/:serviceId', component: RoomListComponentComponent, data: { breadcrumb: 'Accueil > Espace secrétaire > Services > Chambres' }  },
+  { path: 'formulaire-ajout-patient/:chambreId', component: FormulaireAjoutPatientComponent, data: { breadcrumb: 'Accueil > Espace secrétaire > Services > Chambres > Réserver une chambre' }  }
 ];
