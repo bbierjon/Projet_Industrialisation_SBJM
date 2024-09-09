@@ -11,7 +11,7 @@ export interface Service {
   providedIn: 'root'
 })
 export class ServiceService {
-  private apiUrl = 'http://macadre.fr:4000/api/services'; // Adjust according to your setup
+  private apiUrl = 'http://localhost.fr:4000/api/services'; // Adjust according to your setup
 
   constructor(private http: HttpClient) {}
 
