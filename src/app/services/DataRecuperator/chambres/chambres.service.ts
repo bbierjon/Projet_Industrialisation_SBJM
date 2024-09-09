@@ -11,7 +11,7 @@ export interface Chambre {
   providedIn: 'root'
 })
 export class ChambresService {
-  private apiUrl = 'http://localhost:3000/api/services/service';
+  private apiUrl = 'http://macadre.fr:4000/api/services/service';
   constructor(private http: HttpClient) {}
 
 

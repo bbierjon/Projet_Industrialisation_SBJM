@@ -14,7 +14,7 @@ export interface Lit {
   providedIn: 'root'
 })
 export class LitsService {
-  private apiUrl = 'http://localhost:3000/api/chambres/lits';
+  private apiUrl = 'http://macadre.fr:4000/api/chambres/lits';
   constructor(private http: HttpClient) {}
   getLitByChambreId(chambreId: number): Observable<Lit[]> {
     console.log("En attente des données provenance de l'api")

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api/auth'; // Ajustez l'URL en fonction de votre configuration
+  private apiUrl = 'http://macadre.fr:4000/api/auth'; // Ajustez l'URL en fonction de votre configuration
   private roleSubject = new BehaviorSubject<string | null>(null);
 
   constructor(private http: HttpClient) {}
